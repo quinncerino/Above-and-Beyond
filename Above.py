@@ -16,11 +16,12 @@ option = st.selectbox("Select the data to view", ("Temperature", "Sky"), key="op
 
 st.subheader(f"{st.session_state["option"]} for the next {st.session_state["days"]} days in {st.session_state["place"].title()}")
 
+
+
 if place and option and days:
     try:
         filtered_data = get_data(place, days)
 
-        #create a temperature plot if we get temperature option
         if option == "Temperature":
             temperatures = [item['main']['temp'] for item in filtered_data]
             temperatures_f = [((item/10) * (9/5) + 32) for item in temperatures]
