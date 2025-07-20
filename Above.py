@@ -4,7 +4,18 @@ from backend import get_data
 
 st.set_page_config(layout = 'wide')
 
-st.title("ABOVE & BEYOND")
+st.markdown("""
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+""", unsafe_allow_html=True)
+
+st.markdown(
+    f"""<h1 style='
+        color: black; 
+        font-family: "Orbitron", sans-serif;
+        font-size: 90px; 
+        text-align: center;
+        '>ABOVE & BEYOND</h1>""", 
+        unsafe_allow_html=True)
 
 st.header("Above: Weather Forecast for the Next Days")
 
