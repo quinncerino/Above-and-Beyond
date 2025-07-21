@@ -1,7 +1,6 @@
 import streamlit as st
 import backend
 import datetime
-import os
 
 st.set_page_config(layout = 'wide')
 
@@ -22,7 +21,7 @@ st.header("Beyond: Astronomy Image of the Day for the Past Days")
 
 days = st.slider("Past Days", min_value=1, max_value=5, key="days", help="Select the number of forecasted days")
 
-API_KEY = os.getenv("NASA")
+API_KEY = st.secrets("NASA")
 
 num_days = days
 

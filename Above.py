@@ -1,6 +1,6 @@
 import streamlit as st
 import plotly.express as px
-from backend import get_data
+import backend
 
 st.set_page_config(layout = 'wide')
 
@@ -31,7 +31,7 @@ st.subheader(f"{st.session_state["option"]} for the next {st.session_state["days
 
 if place and option and days:
     try:
-        filtered_data = get_data(place, days)
+        filtered_data = backend.get_data(place, days)
 
         if option == "Temperature":
             temperatures = [item['main']['temp'] for item in filtered_data]
