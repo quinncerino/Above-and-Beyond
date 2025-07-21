@@ -1,7 +1,7 @@
 import requests
 import streamlit as st
 
-API_KEY = st.secrets("FORECASTING")
+API_KEY = st.secrets["FORECASTING"]
 
 def get_data(place, days):
     url = f"http://api.openweathermap.org/data/2.5/forecast?q={place}&appid={API_KEY}"
