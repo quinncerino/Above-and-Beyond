@@ -36,6 +36,15 @@ desc_list = backend.get_description(astronomy_url)
 dates = backend.get_dates(astronomy_url)
 
 for i in range(days):
-    st.subheader(dates[i])
-    st.image(f"astronomy_images/image{i}.jpg")
-    st.text(desc_list[i])
+    try:
+        st.subheader(dates[i])
+        st.image(f"astronomy_images/image{i}.jpg")
+        st.text(desc_list[i])
+    except Exception:
+        st.subheader(f"Unable to display Astronomy Image for day {i + 1}")
+        st.info(
+            "Possible reasons for this:\n"
+            "- The image for this date has not been released by NASA yet\n"
+            "- The day was skipped\n"
+            "- The media type was not an image"
+        )
